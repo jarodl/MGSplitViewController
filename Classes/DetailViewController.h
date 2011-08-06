@@ -16,15 +16,15 @@
 	IBOutlet UIBarButtonItem *dividerStyleItem;
 	IBOutlet UIBarButtonItem *masterBeforeDetailItem;
     UIPopoverController *popoverController;
-    UIToolbar *toolbar;
+    __strong UIToolbar *toolbar;
     
-    id detailItem;
-    UILabel *detailDescriptionLabel;
+    __strong id detailItem;
+    __strong UILabel *detailDescriptionLabel;
 }
 
-@property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
-@property (nonatomic, retain) id detailItem;
-@property (nonatomic, retain) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong) IBOutlet UIToolbar *toolbar;
+@property (strong, nonatomic) id detailItem;
+@property (strong) IBOutlet UILabel *detailDescriptionLabel;
 
 - (IBAction)toggleMasterView:(id)sender;
 - (IBAction)toggleVertical:(id)sender;

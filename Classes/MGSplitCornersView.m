@@ -31,14 +31,6 @@
 }
 
 
-- (void)dealloc
-{
-	self.cornerBackgroundColor = nil;
-	
-	[super dealloc];
-}
-
-
 #pragma mark -
 #pragma mark Geometry helpers
 
@@ -225,8 +217,7 @@ double rad2Deg(double radians)
 - (void)setCornerBackgroundColor:(UIColor *)color
 {
 	if (color != cornerBackgroundColor) {
-		[cornerBackgroundColor release];
-		cornerBackgroundColor = [color retain];
+		cornerBackgroundColor = color;
 		[self setNeedsDisplay];
 	}
 }

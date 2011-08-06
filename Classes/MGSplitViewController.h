@@ -43,9 +43,9 @@ typedef enum _MGSplitViewDividerStyle {
 @property (nonatomic, assign) BOOL allowsDraggingDivider; // whether to let the user drag the divider to alter the split position (default NO).
 
 @property (nonatomic, copy) NSArray *viewControllers; // array of UIViewControllers; master is at index 0, detail is at index 1.
-@property (nonatomic, retain) IBOutlet UIViewController *masterViewController; // convenience.
-@property (nonatomic, retain) IBOutlet UIViewController *detailViewController; // convenience.
-@property (nonatomic, retain) MGSplitDividerView *dividerView; // the view which draws the divider/split between master and detail.
+@property (strong) IBOutlet UIViewController *masterViewController; // convenience.
+@property (strong) IBOutlet UIViewController *detailViewController; // convenience.
+@property (strong) MGSplitDividerView *dividerView; // the view which draws the divider/split between master and detail.
 @property (nonatomic, assign) MGSplitViewDividerStyle dividerStyle; // style (and behaviour) of the divider between master and detail.
 
 @property (nonatomic, readonly, getter=isLandscape) BOOL landscape; // returns YES if this view controller is in either of the two Landscape orientations, else NO.

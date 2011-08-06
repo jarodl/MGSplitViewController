@@ -13,16 +13,16 @@
 @class MGSplitViewController;
 
 @interface MGSplitViewAppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
-    MGSplitViewController *splitViewController;
-    RootViewController *rootViewController;
-    DetailViewController *detailViewController;
+    __strong UIWindow *window;
+    __strong MGSplitViewController *splitViewController;
+    __strong RootViewController *rootViewController;
+    __strong DetailViewController *detailViewController;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (strong, nonatomic) IBOutlet UIWindow *window;
 
-@property (nonatomic, retain) IBOutlet MGSplitViewController *splitViewController;
-@property (nonatomic, retain) IBOutlet RootViewController *rootViewController;
-@property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+@property (strong) IBOutlet MGSplitViewController *splitViewController;
+@property (strong) IBOutlet RootViewController *rootViewController;
+@property (strong) IBOutlet DetailViewController *detailViewController;
 
 @end

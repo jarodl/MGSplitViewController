@@ -18,14 +18,14 @@ typedef enum _MGCornersPosition {
 @class MGSplitViewController;
 @interface MGSplitCornersView : UIView {
 	float cornerRadius;
-	MGSplitViewController *splitViewController;
+	__weak MGSplitViewController *splitViewController;
 	MGCornersPosition cornersPosition;
-	UIColor *cornerBackgroundColor;
+	__strong UIColor *cornerBackgroundColor;
 }
 
-@property (nonatomic, assign) float cornerRadius;
-@property (nonatomic, assign) MGSplitViewController *splitViewController; // weak ref.
-@property (nonatomic, assign) MGCornersPosition cornersPosition; // don't change this manually; let the splitViewController manage it.
-@property (nonatomic, retain) UIColor *cornerBackgroundColor;
+@property (nonatomic) float cornerRadius;
+@property (weak, nonatomic) MGSplitViewController *splitViewController; // weak ref.
+@property (nonatomic) MGCornersPosition cornersPosition; // don't change this manually; let the splitViewController manage it.
+@property (strong, nonatomic) UIColor *cornerBackgroundColor;
 
 @end

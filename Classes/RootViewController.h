@@ -14,7 +14,7 @@
     DetailViewController *detailViewController;
 }
 
-@property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+@property (strong) IBOutlet DetailViewController *detailViewController;
 
 - (void)selectFirstRow;
 

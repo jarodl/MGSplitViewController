@@ -28,13 +28,6 @@
 }
 
 
-- (void)dealloc
-{
-	self.splitViewController = nil;
-	[super dealloc];
-}
-
-
 #pragma mark -
 #pragma mark Drawing
 

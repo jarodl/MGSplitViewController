@@ -12,7 +12,7 @@
 
 @interface DetailViewController ()
 
-@property (nonatomic, retain) UIPopoverController *popoverController;
+@property (strong) UIPopoverController *popoverController;
 - (void)configureView;
 
 @end
@@ -32,8 +32,7 @@
 - (void)setDetailItem:(id)newDetailItem
 {
     if (detailItem != newDetailItem) {
-        [detailItem release];
-        detailItem = [newDetailItem retain];
+        detailItem = newDetailItem;
         
         // Update the view.
         [self configureView];
@@ -72,7 +71,6 @@
 		NSMutableArray *items = [[toolbar items] mutableCopy];
 		[items insertObject:barButtonItem atIndex:0];
 		[toolbar setItems:items animated:YES];
-		[items release];
 	}
     self.popoverController = pc;
 }
@@ -89,7 +87,6 @@
 		NSMutableArray *items = [[toolbar items] mutableCopy];
 		[items removeObject:barButtonItem];
 		[toolbar setItems:items animated:YES];
-		[items release];
 	}
     self.popoverController = nil;
 }
@@ -170,17 +167,5 @@
 {
 	[self configureView];
 }
-
-
-- (void)dealloc
-{
-    [popoverController release];
-    [toolbar release];
-    
-    [detailItem release];
-    [detailDescriptionLabel release];
-    [super dealloc];
-}
-
 
 @end
