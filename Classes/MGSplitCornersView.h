@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+double deg2Rad(double degrees);
+double rad2Deg(double radians);
+
 typedef enum _MGCornersPosition {
 	MGCornersPositionLeadingVertical	= 0, // top of screen for a left/right split.
 	MGCornersPositionTrailingVertical	= 1, // bottom of screen for a left/right split.
